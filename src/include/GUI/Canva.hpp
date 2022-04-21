@@ -1,9 +1,13 @@
 #pragma once
 
+//C++:
 #include <memory>
 #include <vector>
 
+//SFML:
 #include <SFML\Graphics.hpp>
+
+//Headers:
 #include <GUI\CanvaElement.hpp>
 
 class CanvaElement;
@@ -12,7 +16,7 @@ class Canva: public sf::Drawable
 {
     protected:
         sf::RenderWindow* renderWindowRef;
-        std::vector<std::shared_ptr<CanvaElement> > elements;
+        std::vector<std::shared_ptr<CanvaElement>> elements; //Estructura para almacenar punteros a CanvaElements.
 
     public:
         Canva(sf::RenderWindow& windowRef);

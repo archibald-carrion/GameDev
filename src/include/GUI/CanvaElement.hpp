@@ -1,16 +1,22 @@
 #pragma once
 
+//C++:
+#include <memory>
+
+//SFML:
 #include <SFML\Graphics.hpp>
+
+//Headers:
 #include <GUI\Canva.hpp>
 
-#include <memory>
+//Clase base.
 
 class Canva;
 
 class CanvaElement: public sf::Sprite
 {
     protected:
-        std::shared_ptr<Canva> parentCanva;
+        std::shared_ptr<Canva> parentCanva; //Puntero a canva.
 
     public:
         CanvaElement();

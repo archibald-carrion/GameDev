@@ -1,6 +1,9 @@
 #pragma once
 
+//Headers:
 #include <GUI\CanvaElement.hpp>
+
+//Hereda públicamente de la clase CanvaElement.
 
 class Button: public CanvaElement
 {
