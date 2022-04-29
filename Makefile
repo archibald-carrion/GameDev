@@ -35,7 +35,7 @@ objectFiles=$(sourceFiles:$(sourceFolder)/%.cpp=$(objectFolder)/%.o)
 compilerFlags=-I$(includeFolder)
 
 # Hold all the linker flags we will use into a single variable.
-linkerFlags=-L$(libFolder) -lsfml-graphics -lsfml-window -lsfml-system
+linkerFlags=-L$(libFolder) -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
 # //--------------------------------------- NEW COMMAND --------------------------------------------------------//
 

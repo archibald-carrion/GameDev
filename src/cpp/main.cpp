@@ -3,6 +3,7 @@
 
 //SFML:
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 //Headers:
 #include <GUI\Button.hpp>
@@ -127,6 +128,13 @@ int main()
     myCanva.linkElement(boton_2);
 
     sf::Clock deltaClock;
+
+    //------------------------------------------
+    //---AUDIO TEST---
+    sf::Music music;
+    music.openFromFile("Order_v1.ogg");
+    music.play();
+    //------------------------------------------
 
     while (window.isOpen())
     {
