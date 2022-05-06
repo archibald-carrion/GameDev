@@ -1,5 +1,6 @@
 //C++:
-#include <iostream>
+#include <iostream> //Para la entrada y salida de datos por consola.
+#include <time.h> //Header que contiene definiciones y funciones para trabajar con la fecha y hora de la máquina.
 
 //SFML:
 #include <SFML/Graphics.hpp>
@@ -108,6 +109,14 @@ void check_mouse_position(sf::Window &window) //Check the mouse position relativ
     }
 }
 
+//Método que genera un número pseudoalteatoriamente de acuerdo a un rango determinado.
+unsigned int generar_numero(unsigned int min, unsigned int max) // [min, max].
+{
+    srand(time(NULL));
+
+    return min + (rand() % max);
+}
+
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1080, 720), "GameDev");
@@ -135,6 +144,8 @@ int main()
     music.openFromFile("Order_v1.ogg");
     music.play();
     //------------------------------------------
+
+    std::cout << "Num generado: " << generar_numero(1, 3) << "\n\n"; //Pruebas.
 
     while (window.isOpen())
     {
