@@ -128,14 +128,30 @@ int main()
     sf::Texture myButtonTexture; 
     myButtonTexture.loadFromFile("undertale_button.jpg");
 
-    std::shared_ptr<Button> boton_1(new Button(sf::Vector2f(100.f,100.f), sf::Vector2f(0.1f,0.1f), sf::Color::Green));
-    boton_1 -> setTexture(myButtonTexture);
-    myCanva.linkElement(boton_1);
+    //-------------------------------------------------------------------------------------------------
+    // Botones de opciones del menú principal:
+    sf::Texture main_menu_start_button_texture; 
+    main_menu_start_button_texture.loadFromFile("main_menu_start_button.jpg");
 
-    std::shared_ptr<Button> boton_2(new Button(sf::Vector2f(200.f,100.f), sf::Vector2f(0.1f,0.1f), sf::Color::Red));
-    boton_2 -> setTexture(myButtonTexture);
-    myCanva.linkElement(boton_2);
+    std::shared_ptr<Button> boton_menu_principal_1(new Button(sf::Vector2f(300.f, 100.f), sf::Vector2f(0.1f, 0.1f), sf::Color::Black));
+    boton_menu_principal_1 -> setTexture(main_menu_start_button_texture);
+    myCanva.linkElement(boton_menu_principal_1);
 
+    sf::Texture main_menu_settings_button_texture; 
+    main_menu_settings_button_texture.loadFromFile("main_menu_settings_button.jpg");
+
+    std::shared_ptr<Button> boton_menu_principal_2(new Button(sf::Vector2f(300.f, 200.f), sf::Vector2f(0.1f, 0.1f), sf::Color::Black));
+    boton_menu_principal_2 -> setTexture(main_menu_settings_button_texture);
+    myCanva.linkElement(boton_menu_principal_2);
+
+    sf::Texture main_menu_exit_button_texture; 
+    main_menu_exit_button_texture.loadFromFile("main_menu_exit_button.jpg");
+
+    std::shared_ptr<Button> boton_menu_principal_3(new Button(sf::Vector2f(300.f, 300.f), sf::Vector2f(0.1f, 0.1f), sf::Color::Black));
+    boton_menu_principal_3 -> setTexture(main_menu_exit_button_texture);
+    myCanva.linkElement(boton_menu_principal_3);
+
+    //-------------------------------------------------------------------------------------------------
     sf::Clock deltaClock;
 
     //------------------------------------------
