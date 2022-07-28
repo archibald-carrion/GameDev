@@ -119,9 +119,9 @@ unsigned int generar_numero(unsigned int min, unsigned int max) // [min, max].
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(1080, 720), "GameDev");
+    sf::RenderWindow window(sf::VideoMode(1080, 720), "GameDev"); // Se renderiza una ventana para mostrar el contenido del programa.
     
-    Canva myCanva(window);
+    Canva myCanva(window); // Se crea un nuevo Canva a partir de la ventana del programa.
 
     // La dirección de la textura debe estar al mismo nivel o más profundo de la carpeta del ejecutable
     // Se podrá resolver? Para que aloje imagenes directamente de src\res ? Ni idea
@@ -152,7 +152,7 @@ int main()
     myCanva.linkElement(boton_menu_principal_3);
 
     //-------------------------------------------------------------------------------------------------
-    sf::Clock deltaClock;
+    sf::Clock deltaClock; // Contador que determina el tiempo transcurrido entre un frame y otro.
 
     //------------------------------------------
     //---AUDIO TEST---
@@ -165,7 +165,7 @@ int main()
 
     while (window.isOpen())
     {
-        deltaClock.restart();
+        deltaClock.restart(); // Se reinicia el contador de tiempo entre frames (inicia en 0).
         
         sf::Event event;
 
@@ -183,16 +183,17 @@ int main()
         }
 
         //------------------------------------------
-        window.clear();
+        window.clear(); // Se borra el contenido mostrado actualmente en la ventana.
 
-        window.draw(myCanva);
+        window.draw(myCanva); // Se debuja el Canva en la ventana.
 
-        //User input check routines:
+        // User input check routines:
         check_key_pressed();
         check_joystick_button_pressed();
         check_mouse_position(window);
 
-        window.display();
+        window.display(); // Se muestra el contenido del frame actual en la ventana.
+
         //------------------------------------------
     }
 
