@@ -1,16 +1,16 @@
 //Headers:
 #include <GUI\Canva.hpp>
 
-Canva::Canva(sf::RenderWindow& windowRef)
+Canva::Canva(sf::RenderWindow &windowRef) // Constructor.
 {
     this -> renderWindowRef = &windowRef;
 }
 
-Canva::~Canva()
+Canva::~Canva() // Destructor.
 {
     unsigned int vectorSize = this -> elements.size();
 
-    for (unsigned int i = 0; i < vectorSize; i++)
+    for (unsigned int i = 0; i < vectorSize; i++) // Ciclo que va eliminando cada CanvaElement.
     {
         this -> elements.at(i) -> parentCanva = nullptr;
     }
@@ -72,7 +72,7 @@ bool Canva::hasElement(std::shared_ptr<CanvaElement> elementToSearch) const
     return false;
 }
 
-sf::RenderWindow* Canva::getRenderWindow() const
+sf::RenderWindow *Canva::getRenderWindow() const
 {
     return this -> renderWindowRef;
 }
@@ -87,7 +87,7 @@ void Canva::draw(sf::RenderTarget& target, sf::RenderStates states) const
     }
 }
 
-void Canva::update(sf::Event& event, sf::Clock& deltaTimeClock)
+void Canva::update(sf::Event &event, sf::Clock &deltaTimeClock)
 {
     unsigned int vectorSize = this -> elements.size();
 
@@ -97,7 +97,7 @@ void Canva::update(sf::Event& event, sf::Clock& deltaTimeClock)
     }
 }
 
-void Canva::fixedUpdate(sf::Event& event, float deltaTime)
+void Canva::fixedUpdate(sf::Event &event, float deltaTime)
 {
     unsigned int vectorSize = this -> elements.size();
 

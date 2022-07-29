@@ -1,12 +1,12 @@
 //Headers_
 #include <GUI\CanvaElement.hpp>
 
-CanvaElement::CanvaElement()
+CanvaElement::CanvaElement() // Constructor.
 {
     this -> parentCanva = nullptr;
 }
 
-CanvaElement::~CanvaElement()
+CanvaElement::~CanvaElement() // Destructor.
 {
     this -> parentCanva -> unlinkElement(std::shared_ptr<CanvaElement>(this));
 }
@@ -37,7 +37,10 @@ bool CanvaElement::unlinkFromParent()
         return true;
     }
 
-    return false;
+    else
+    {
+        return false;
+    }
 }
 
 std::shared_ptr<Canva> CanvaElement::getParent() const

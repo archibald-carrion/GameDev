@@ -1,17 +1,17 @@
 //Headers:
 #include <GUI\Button.hpp>
 
-Button::Button(sf::Vector2f pos, sf::Vector2f scale, sf::Color color)
+Button::Button(sf::Vector2f position, sf::Vector2f scale, sf::Color color) // Constructor.
 {
     this -> setScale(scale);
-    this -> setPosition(pos);
+    this -> setPosition(position);
     this -> clickedColor = color;
 }
 
-Button::~Button()
+Button::~Button() // Destructor.
 {}
 
-void Button::update(sf::Event& event, sf::Clock& deltaTimeclock)
+void Button::update(sf::Event &event, sf::Clock &deltaTimeclock)
 {
     if (event.type == sf::Event::MouseButtonPressed)
     {
@@ -36,5 +36,5 @@ void Button::update(sf::Event& event, sf::Clock& deltaTimeclock)
     }
 }
 
-void Button::fixedUpdate(sf::Event& event, float deltaTIme)
+void Button::fixedUpdate(sf::Event &event, float deltaTIme)
 {}
