@@ -1,4 +1,6 @@
 #pragma once
 
-// Intenté poner aliases pero no me salen
-// Alguien sabe como hacer un alias para std::shared_ptr<T>, digamos SmartPtr<T> ?
+#include <memory>
+
+// Alias de shared pointer como SharedPtr
+template <class T> using SharedPtr = std::shared_ptr<T>;
